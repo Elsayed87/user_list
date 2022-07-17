@@ -6,20 +6,10 @@ import '../bloc_userlist/user_bloc.dart';
 import '../models/user.dart';
 import '../models/widgets.dart';
 import '../utility/const.dart';
+import '../utility/shareddata.dart';
 
 class UserView extends StatelessWidget {
-  final List<Color> colors = <Color>[
-    Colors.red,
-    Colors.blue,
-    Colors.green,
-    Colors.yellow,
-    Colors.orange,
-    Colors.blueAccent,
-    Colors.pinkAccent,
-    Colors.yellow,
-    Colors.cyanAccent,
-    Colors.teal
-  ];
+
 
   UserView({Key? key}) : super(key: key);
 
