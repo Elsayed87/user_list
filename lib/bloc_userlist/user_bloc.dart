@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../models/user.dart';
-import '../user_service.dart';
+import '../data access layer/user_service.dart';
 
 part 'user_event.dart';
 part 'user_state.dart';

@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:user_list/models/user.dart';
 
-import 'models/users_model.dart';
+import '../models/users_model.dart';
 
 const url = 'https://gorest.co.in/public/v1/users?page=1';
 
