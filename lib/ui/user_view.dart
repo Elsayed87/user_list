@@ -4,6 +4,7 @@ import 'package:user_list/ui/user_details.dart';
 
 import '../bloc_userlist/user_bloc.dart';
 import '../models/user.dart';
+import '../models/widgets.dart';
 import '../utility/const.dart';
 
 class UserView extends StatelessWidget {
@@ -50,11 +51,10 @@ class UserView extends StatelessWidget {
                           leading: Stack(
                             alignment: Alignment.bottomRight,
                             children: [
-                              CircleAvatar(
-                                backgroundColor: colors[index],
-                                radius: 45.0,
-                                child: Text(
-                                  //user.name.characters.first.toUpperCase(),
+                              CircleAvatarBody(
+                                colors: colors[index],
+                                raduisSize: 45.0,
+                                widget: Text(
                                   user.name
                                       .trim()
                                       .split(' ')
@@ -66,15 +66,13 @@ class UserView extends StatelessWidget {
                               ),
                               const Padding(
                                 padding: EdgeInsets.all(5.0),
-                                child: CircleAvatar(
-                                  radius: 12.0,
-                                  backgroundColor: Colors.white,
-                                  child: Icon(
-                                    Icons.male,
-                                    color: Colors.black,
-                                    size: 9,
-                                  ),
-                                ),
+                                child:CircleAvatarBody(
+                                  colors: Colors.white,
+                                  widget: Icon(
+                                  Icons.male,
+                                  color: Colors.black,
+                                  size: 9,
+                                ), raduisSize: 12.0,)
                               ),
                             ],
                           ),
@@ -107,3 +105,7 @@ class UserView extends StatelessWidget {
         ));
   }
 }
+
+
+
+
