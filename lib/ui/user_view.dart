@@ -9,8 +9,6 @@ import '../utility/const.dart';
 import '../utility/shareddata.dart';
 
 class UserView extends StatelessWidget {
-
-
   UserView({Key? key}) : super(key: key);
 
   @override
@@ -88,10 +86,11 @@ class UserView extends StatelessWidget {
                       ),
                     );
                   });
-            } else if (state is UserNavigate) {}
-            return Center(
-              child: CircularProgressIndicator(),
-            );
+            } else {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
           },
         ));
   }
