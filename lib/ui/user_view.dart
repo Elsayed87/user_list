@@ -65,15 +65,16 @@ class UserView extends StatelessWidget {
                                 ),
                               ),
                               const Padding(
-                                padding: EdgeInsets.all(5.0),
-                                child:CircleAvatarBody(
-                                  colors: Colors.white,
-                                  widget: Icon(
-                                  Icons.male,
-                                  color: Colors.black,
-                                  size: 9,
-                                ), raduisSize: 12.0,)
-                              ),
+                                  padding: EdgeInsets.all(5.0),
+                                  child: CircleAvatarBody(
+                                    colors: Colors.white,
+                                    widget: Icon(
+                                      Icons.male,
+                                      color: Colors.black,
+                                      size: 9,
+                                    ),
+                                    raduisSize: 12.0,
+                                  )),
                             ],
                           ),
                           title: Text(user.name.toString(), style: kNameStyle),
@@ -105,7 +106,3 @@ class UserView extends StatelessWidget {
         ));
   }
 }
-
-
-
-
