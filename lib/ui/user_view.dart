@@ -4,7 +4,7 @@ import 'package:user_list/ui/user_details.dart';
 
 import '../bloc_userlist/user_bloc.dart';
 import '../models/user.dart';
-import '../models/widgets.dart';
+import 'widgets.dart';
 import '../utility/const.dart';
 import '../utility/shareddata.dart';
 
@@ -13,7 +13,7 @@ class UserView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //User user = state.userDataInfo[index];
+
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -87,7 +87,7 @@ class UserView extends StatelessWidget {
                     );
                   });
             } else {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }

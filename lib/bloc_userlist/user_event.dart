@@ -12,9 +12,3 @@ class UserEventLoad extends UserEvent{
 
   List<Object?> get props =>[];
 }
-class UserEventNavigate extends UserEvent{
-
-  @override
-
-  List<Object?> get props =>[];
-}
