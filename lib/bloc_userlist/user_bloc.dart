@@ -38,24 +38,16 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     // );
   }
 
-
-  void _onFetched(UserEvent event, Emitter<UserState> emit) async{
-    if (state  is  UserLoading) {
-
+  void _onFetched(UserEvent event, Emitter<UserState> emit) async {
+    if (event is UserEventLoad) {
       emit(UserLoading());
-    }else if( event is UserEventLoad){
+    }
       try {
         List<User> userInfo = await _userRepositoryImpl.fetchData();
         emit(UserLoaded(userDataInfo: userInfo));
       } catch (ex) {
         emit(UserError(message: '$ex'));
       }
-    }
+
   }
-
-
-
-
-
-
 }
