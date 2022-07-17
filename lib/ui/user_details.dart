@@ -20,7 +20,7 @@ class UserDetails extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back),
+          icon:  Icon(Icons.arrow_back),
           color: Colors.black,
         ),
       ),
@@ -30,31 +30,7 @@ class UserDetails extends StatelessWidget {
           child: Column(
 
             children: [
-              Stack(
-                alignment: Alignment.bottomRight,
-                children: [
-                CircleAvatar(
-                  backgroundColor:color,
-                  radius: 45.0,
-                  child: Text(
-                    name.trim().split(' ').map((e) => e[0]).take(2).join(),
-                    style: kCharDetailsStyle,
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.all(0.0),
-                  child: CircleAvatar(
-                    radius: 16.0,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.male,
-                      color: Colors.black,
-                      size: 14,
-                    ),
-                  ),
-                ),
-              ],
-              ),
+              StackContent(color: color, name: name),
               const SizedBox(height: 15,),
               Text(name,style: kNameStyle,),
               Text(email,style: kEmailStyle,),
@@ -62,6 +38,46 @@ class UserDetails extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class StackContent extends StatelessWidget {
+  const StackContent({
+    Key? key,
+    required this.color,
+    required this.name,
+  }) : super(key: key);
+
+  final Color color;
+  final String name;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.bottomRight,
+      children: [
+      CircleAvatar(
+        backgroundColor:color,
+        radius: 45.0,
+        child: Text(
+          name.trim().split(' ').map((e) => e[0]).take(2).join(),
+          style: kCharDetailsStyle,
+        ),
+      ),
+      const Padding(
+        padding: EdgeInsets.all(0.0),
+        child: CircleAvatar(
+          radius: 16.0,
+          backgroundColor: Colors.white,
+          child: Icon(
+            Icons.male,
+            color: Colors.black,
+            size: 14,
+          ),
+        ),
+      ),
+    ],
     );
   }
 }
