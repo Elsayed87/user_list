@@ -8,7 +8,7 @@ import 'models/users_model.dart';
 const url = 'https://gorest.co.in/public/v1/users?page=1';
 
 class UserNetWork {
-  Future<List<User>> getUser() async {
+  Future<List<User>> getUser({int retry = 3}) async {
     http.Response response = await http.get(Uri.parse(url));
     try {
       if (response.statusCode == 200) {
@@ -16,13 +16,13 @@ class UserNetWork {
         var jsonData = jsonDecode(body);
         Users users = Users.fromJson(jsonData);
         List<User> userInfo = users.users.map((e) => User.fromJson(e)).toList();
-       // print(userInfo);
+
         return userInfo;
+      } else {
+        throw Exception('failed to load user data!');
       }
     } catch (e) {
       throw Exception('failed to load user data!');
     }
-    return  getUser();
   }
-
 }
